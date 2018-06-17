@@ -3,18 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f5741c97-6c38-4d7c-a040-5de40d968f23" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeyPair/encrypted_symmetric_img.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/encrypted_symmetric_img.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KeyPair/privateKey" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/privateKey" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KeyPair/publicKey" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/publicKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeyPair/transformed_symmetric_img.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/transformed_symmetric_img.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/licenta/AsymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/AsymmetricCrypto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$12.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$13.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$15.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$5.class" afterDir="false" />
@@ -23,13 +19,7 @@
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/licenta/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/licenta/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/licenta/SymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/SymmetricCrypto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/licenta/CryptoFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/CryptoFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/licenta/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/licenta/SymmetricCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/SymmetricCrypto.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +59,8 @@
       <file leaf-file-name="CryptoFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/licenta/CryptoFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="702" lean-forward="true" selection-start-line="702" selection-end-line="702" />
+            <state relative-caret-position="204">
+              <caret line="338" column="88" selection-start-line="338" selection-start-column="88" selection-end-line="338" selection-end-column="88" />
               <folding>
                 <element signature="e#40443#40444#0" expanded="true" />
                 <element signature="e#40521#40522#0" expanded="true" />
@@ -284,16 +274,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529169647044</updated>
-      <workItem from="1529169654486" duration="27957000" />
+      <workItem from="1529169654486" duration="30313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27957000" />
+    <option name="totallyTimeSpent" value="30313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -450,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/licenta/CryptoFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="702" lean-forward="true" selection-start-line="702" selection-end-line="702" />
+        <state relative-caret-position="204">
+          <caret line="338" column="88" selection-start-line="338" selection-start-column="88" selection-end-line="338" selection-end-column="88" />
           <folding>
             <element signature="e#40443#40444#0" expanded="true" />
             <element signature="e#40521#40522#0" expanded="true" />

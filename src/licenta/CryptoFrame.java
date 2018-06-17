@@ -304,6 +304,43 @@ public class CryptoFrame extends JFrame {
 
                 }
 
+                // decrypt asymmetric file
+                if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
+                        && comboEncryptionType.getSelectedIndex() == 2 && comboResourceType.getSelectedIndex() == 2) {
+                    changeStateCryptoElements(true, true, false, false, true);
+                    clearCryptoTextFields();
+
+
+                    JTFFileKey.setVisible(false);
+                    jLabelFileKey.setVisible(false);
+
+                    // add label for setting the algorithm
+                    jLabelAlg.setText("Introduceti algoritmul de decriptare: ");
+
+                    // add TF for algorithm insertion
+                    jTFAlgorithm.setMaximumSize(new Dimension(100, 28));
+                    jTFAlgorithm.setPreferredSize(new Dimension(100, 28));
+
+                    // add label for keylength
+                    jLabelKeyLength.setText("Introduceti lungimea cheii: ");
+
+                    // add TF for key length
+                    jTFAlgorithm.setMaximumSize(new Dimension(150, 80));
+                    jTFAlgorithm.setPreferredSize(new Dimension(150, 80));
+
+                    //add file chooser for choosing the file
+                    createSelectFileButton();
+
+                    // perform asymmetric file decryption..
+                    performCrypto.setText("Decriptare");
+
+
+                    removeAllActionListenersFromButton(performCrypto);
+                    performCrypto.addActionListener(getPerformAsymmetricFileDecryption());
+
+
+                }
+
                 // encrypt symmetric text
                 else if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 2
                         && comboEncryptionType.getSelectedIndex() == 1 && comboResourceType.getSelectedIndex() == 1) {
@@ -677,6 +714,53 @@ public class CryptoFrame extends JFrame {
         };
     }
 
+
+    private ActionListener getPerformAsymmetricFileDecryption () {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (JTFKeyLength.getText() != null && JTFKeyLength.getText() != " "
+                        && JTFKeyLength.getText().length() != 0 && jTFAlgorithm.getText() != null
+                        && jTFAlgorithm.getText() != " " && jTFAlgorithm.getText().length() != 0) {
+
+                    try {
+                        AsymmetricCrypto ac = new AsymmetricCrypto(jTFAlgorithm.getText());
+                        File input = new File("KeyPair/encrypted_asymmetric_file.txt");
+                        File output = new File("KeyPair/decrypted_asymmetric_file.txt");
+
+                        if (!input.exists()) {
+                            JOptionPane.showConfirmDialog(cf, "Fisierul de input nu exista !", "!", JOptionPane.ERROR_MESSAGE);
+                        }
+
+                        else if (input.exists()) {
+                            if (output.exists()) {
+                                output.delete(); output.createNewFile();
+
+                                ac.decryptFile(ac.getFileInBytes(input), output);
+
+                                encrypted = String.valueOf(ac.getFileInBytes(output));
+
+                            }
+                        }
+
+
+
+                    } catch (Exception e2) {
+                        // TODO Auto-generated catch block
+                        e2.printStackTrace();
+                    }
+
+                    System.out.println("Deriptarea a fost facuta cu succes !");
+                    JOptionPane.showMessageDialog(cf, encrypted, "Rezultat decriptare", JOptionPane.INFORMATION_MESSAGE);
+
+                    createSendEmailButton("carolinaangelica26@gmail.com", encrypted);
+                } else {
+                    String message = "Nu ati completat unul dintre campurile necesare decriptarii !";
+                    JOptionPane.showMessageDialog(cf, message, "!", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        };
+    }
 
     private ActionListener getPerformSymmetricListener() {
         return new ActionListener() {
