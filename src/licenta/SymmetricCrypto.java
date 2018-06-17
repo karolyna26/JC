@@ -13,10 +13,7 @@ import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -87,27 +84,10 @@ public class SymmetricCrypto extends Symmetric {
       byte[] encryptedBytes = cipher.doFinal(textToEncrypt);
       return encryptedBytes;
    }
-    public String encryptText(String msg, String algorithm) {
-        try {
-            cipher.init(Cipher.ENCRYPT_MODE, getSecretKey(algorithm), getIV(), random);
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (InvalidAlgorithmParameterException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        try {
-            return new String(org.apache.commons.codec.binary.Base64.encodeBase64(cipher.doFinal(msg.getBytes("UTF-8"))));
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+    public String encryptText(String msg, String algorithm) throws UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException {
 
-        return null;
+            cipher.init(Cipher.ENCRYPT_MODE, getSecretKey(algorithm), getIV(), random);
+            return new String(org.apache.commons.codec.binary.Base64.encodeBase64(cipher.doFinal(msg.getBytes("UTF-8"))));
     }
 
    static byte[] decryptedText(byte[] encryptedBytes, SecretKey secretKey, IvParameterSpec iv)
@@ -119,27 +99,13 @@ public class SymmetricCrypto extends Symmetric {
 
    }
 
-    public String decryptText(String msg, String algorithm) {
-        try {
-            this.cipher.init(Cipher.DECRYPT_MODE, getSecretKey(algorithm), getIV(), random);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidAlgorithmParameterException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        }
-        try {
-            return new String(cipher.doFinal(org.apache.commons.codec.binary.Base64.decodeBase64(msg.getBytes())), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        }
+    public String decryptText(String msg, String algorithm) throws BadPaddingException, IllegalBlockSizeException, UnsupportedEncodingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException {
 
-        return null;
+            this.cipher.init(Cipher.DECRYPT_MODE, getSecretKey(algorithm), getIV(), random);
+
+
+            return new String(cipher.doFinal(org.apache.commons.codec.binary.Base64.decodeBase64(msg.getBytes())), "UTF-8");
+
     }
 
    static void encryptFile(Key key, File inputFile, File outputFile, IvParameterSpec iv) {
@@ -195,7 +161,7 @@ public class SymmetricCrypto extends Symmetric {
       }
    }
 
-   static boolean encryptImage(Key key, File inputFile, File outputFile, IvParameterSpec iv) {
+   static void encryptImage(Key key, File inputFile, File outputFile, IvParameterSpec iv) {
       CipherOutputStream cos = null;
       FileOutputStream fos = null;
       FileInputStream fis = null;
@@ -218,10 +184,9 @@ public class SymmetricCrypto extends Symmetric {
       } catch (InvalidAlgorithmParameterException e) {
          e.printStackTrace();
       }
-        return false;
    }
 
-   static boolean decryptImage(Key key, File inputFile, File outputFile, IvParameterSpec iv) {
+   static void decryptImage(Key key, File inputFile, File outputFile, IvParameterSpec iv) {
       CipherOutputStream cos = null;
       FileOutputStream fos = null;
       FileInputStream fis = null;
@@ -244,7 +209,7 @@ public class SymmetricCrypto extends Symmetric {
       }
 
 
-        return false;
+
    }
 
    @Override
@@ -317,4 +282,16 @@ public class SymmetricCrypto extends Symmetric {
       return keySpecFile;
    }
 
+    @Override
+    public String toString() {
+        return "SymmetricCrypto{" +
+                "plainText='" + plainText + '\'' +
+                ", textToEncrypt=" + Arrays.toString(textToEncrypt) +
+                ", algorithm='" + algorithm + '\'' +
+                ", secretKey=" + secretKey +
+                ", iv=" + iv +
+                ", keyImag=" + keyImag +
+                ", keySpecFile=" + keySpecFile +
+                '}';
+    }
 }

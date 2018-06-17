@@ -22,6 +22,7 @@ import java.security.spec.DSAPublicKeySpec;
 import java.security.spec.KeySpec;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Objects;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -92,6 +93,7 @@ public class AsymmetricCrypto extends Asymmetric {
    public void encryptFile(byte[] input, File output) throws IOException, GeneralSecurityException {
       this.cipher.init(Cipher.ENCRYPT_MODE, privateKey);
       writeToFile(output, this.cipher.doFinal(input));
+
    }
 
    public void decryptFile(byte[] input, File output) throws IOException, GeneralSecurityException {
@@ -134,4 +136,32 @@ public class AsymmetricCrypto extends Asymmetric {
          fos.close();
 
    }
+
+    @Override
+    public String toString() {
+        return "AsymmetricCrypto{" +
+                "algorithm='" + algorithm + '\'' +
+                ", plainText='" + plainText + '\'' +
+                ", privateKey=" + privateKey +
+                ", publicKey=" + publicKey +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AsymmetricCrypto that = (AsymmetricCrypto) o;
+        return Objects.equals(cipher, that.cipher) &&
+                Objects.equals(algorithm, that.algorithm) &&
+                Objects.equals(plainText, that.plainText) &&
+                Objects.equals(privateKey, that.privateKey) &&
+                Objects.equals(publicKey, that.publicKey);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(cipher, algorithm, plainText, privateKey, publicKey);
+    }
 }

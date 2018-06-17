@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5741c97-6c38-4d7c-a040-5de40d968f23" name="Default" comment="" />
+    <list default="true" id="f5741c97-6c38-4d7c-a040-5de40d968f23" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyPair/encrypted_symmetric_img.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/encrypted_symmetric_img.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyPair/privateKey" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/privateKey" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyPair/publicKey" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/publicKey" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyPair/transformed_symmetric_img.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KeyPair/transformed_symmetric_img.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/AsymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/AsymmetricCrypto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/CryptoFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/CryptoFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/licenta/SymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/licenta/SymmetricCrypto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/licenta/CryptoFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/CryptoFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/licenta/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/licenta/SymmetricCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/licenta/SymmetricCrypto.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/licenta/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="65" />
+            <state relative-caret-position="400">
+              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -24,8 +53,8 @@
       <file leaf-file-name="SymmetricKey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/licenta/SymmetricKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="236">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#515#516#0" expanded="true" />
@@ -37,20 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLDSigRI.class" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/org/jcp/xml/dsig/internal/dom/XMLDSigRI.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CryptoFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CryptoFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/licenta/CryptoFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="478" column="1" selection-start-line="478" selection-start-column="1" selection-end-line="478" selection-end-column="1" />
+            <state relative-caret-position="370">
+              <caret line="702" lean-forward="true" selection-start-line="702" selection-end-line="702" />
               <folding>
                 <element signature="e#40443#40444#0" expanded="true" />
                 <element signature="e#40521#40522#0" expanded="true" />
@@ -66,8 +86,8 @@
       <file leaf-file-name="AsymmetricCrypto.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+            <state relative-caret-position="370">
+              <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
             </state>
           </provider>
         </entry>
@@ -87,8 +107,8 @@
       <file leaf-file-name="SymmetricCrypto.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/licenta/SymmetricCrypto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="246" column="21" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
+            <state relative-caret-position="302">
+              <caret line="191" column="33" lean-forward="true" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1473#1474#0" expanded="true" />
@@ -107,10 +127,12 @@
       <find>text</find>
       <find>encryptT</find>
       <find>encryptTex</find>
-      <find>getAlgo</find>
-      <find>decryptT</find>
       <find>encryptTe</find>
       <find>decrypt</find>
+      <find>Img</find>
+      <find>Ima</find>
+      <find>getAlgo</find>
+      <find>decryptT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,8 +141,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java" />
         <option value="$PROJECT_DIR$/src/licenta/SymmetricKey.java" />
+        <option value="$PROJECT_DIR$/src/licenta/Main.java" />
+        <option value="$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java" />
         <option value="$PROJECT_DIR$/src/licenta/SymmetricCrypto.java" />
         <option value="$PROJECT_DIR$/src/licenta/CryptoFrame.java" />
       </list>
@@ -261,12 +284,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529169647044</updated>
-      <workItem from="1529169654486" duration="13086000" />
+      <workItem from="1529169654486" duration="27957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13086000" />
+    <option name="totallyTimeSpent" value="27957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -281,12 +304,12 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32825485" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32825485" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -348,7 +371,7 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -359,10 +382,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/org/jcp/xml/dsig/internal/dom/XMLDSigRI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/nio/file/Files.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="773" column="31" selection-start-line="773" selection-start-column="31" selection-end-line="773" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/licenta/SymmetricKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="236">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#515#516#0" expanded="true" />
@@ -373,10 +410,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/org/jcp/xml/dsig/internal/dom/XMLDSigRI.class">
+    <entry file="file://$PROJECT_DIR$/src/licenta/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="400">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
         </state>
       </provider>
     </entry>
@@ -390,17 +434,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/licenta/AsymmetricCrypto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/licenta/SymmetricCrypto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="246" column="21" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
+        <state relative-caret-position="302">
+          <caret line="191" column="33" lean-forward="true" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1473#1474#0" expanded="true" />
@@ -413,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/licenta/CryptoFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="478" column="1" selection-start-line="478" selection-start-column="1" selection-end-line="478" selection-end-column="1" />
+        <state relative-caret-position="370">
+          <caret line="702" lean-forward="true" selection-start-line="702" selection-end-line="702" />
           <folding>
             <element signature="e#40443#40444#0" expanded="true" />
             <element signature="e#40521#40522#0" expanded="true" />
@@ -423,13 +460,6 @@
             <element signature="e#42774#43071#0" expanded="true" />
             <element signature="e#43070#43071#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/licenta/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="65" />
         </state>
       </provider>
     </entry>

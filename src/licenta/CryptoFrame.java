@@ -232,41 +232,9 @@ public class CryptoFrame extends JFrame {
 
                     removeAllActionListenersFromButton(performCrypto);
                     performCrypto.addActionListener(getPerformAssymetricListener());
-
-                    // encrypt symmetric text
-                } else if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 2
-                        && comboEncryptionType.getSelectedIndex() == 1 && comboResourceType.getSelectedIndex() == 1) {
-                    changeStateCryptoElements(true, false, true, true, false);
-                    clearCryptoTextFields();
-
-                    // add label for text inserting
-                    jLabelHelper.setText("Introduceti textul: ");
-
-                    // add TF for inserting plainText
-                    JTFHelper.setMaximumSize(new Dimension(100, 28));
-                    JTFHelper.setPreferredSize(new Dimension(100, 28));
-
-                    // add label for setting the algorithm
-                    jLabelAlg.setText("Introduceti algoritmul de criptare: ");
-
-                    // add TF for algorithm insertion
-                    jTFAlgorithm.setMaximumSize(new Dimension(100, 28));
-                    jTFAlgorithm.setPreferredSize(new Dimension(100, 28));
-
-                    //add label for symmetric key algorithm
-                    jLabelSymmetricKeyAlg.setText("Introduceti algoritmul cheii: ");
-
-                    //add TF for symmetric key algorithm
-                    JTFSymmetricKeyAlg.setMaximumSize(new Dimension(100, 28));
-                    JTFSymmetricKeyAlg.setPreferredSize(new Dimension(100, 28));
-
-                    // perform symmetric encryption..
-                    performCrypto.setText("Criptare");
-
-
-                    removeAllActionListenersFromButton(performCrypto);
-                    performCrypto.addActionListener(getPerformSymmetricListener());
                 }
+
+
                 //decrypt asymmetric text
                 else if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
                             && comboEncryptionType.getSelectedIndex() == 2 && comboResourceType.getSelectedIndex() == 1) {
@@ -299,8 +267,80 @@ public class CryptoFrame extends JFrame {
 
                     }
 
+                // encrypt asymmetric file
+                if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
+                        && comboEncryptionType.getSelectedIndex() == 1 && comboResourceType.getSelectedIndex() == 2) {
+                    changeStateCryptoElements(true, true, false, false, true);
+                    clearCryptoTextFields();
 
-                //decrypt symmetric text
+
+                    JTFFileKey.setVisible(false);
+                    jLabelFileKey.setVisible(false);
+
+                    // add label for setting the algorithm
+                    jLabelAlg.setText("Introduceti algoritmul de criptare: ");
+
+                    // add TF for algorithm insertion
+                    jTFAlgorithm.setMaximumSize(new Dimension(100, 28));
+                    jTFAlgorithm.setPreferredSize(new Dimension(100, 28));
+
+                    // add label for keylength
+                    jLabelKeyLength.setText("Introduceti lungimea cheii: ");
+
+                    // add TF for key length
+                    jTFAlgorithm.setMaximumSize(new Dimension(150, 80));
+                    jTFAlgorithm.setPreferredSize(new Dimension(150, 80));
+
+                    //add file chooser for choosing the file
+                    createSelectFileButton();
+
+                    // perform asymmetric file encryption..
+                    performCrypto.setText("Criptare");
+
+
+                    removeAllActionListenersFromButton(performCrypto);
+                    performCrypto.addActionListener(getPerformAsymmetricFileEncryption());
+
+
+                }
+
+                // encrypt symmetric text
+                else if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 2
+                        && comboEncryptionType.getSelectedIndex() == 1 && comboResourceType.getSelectedIndex() == 1) {
+                    changeStateCryptoElements(true, false, true, true, false);
+                    clearCryptoTextFields();
+
+                    // add label for text inserting
+                    jLabelHelper.setText("Introduceti textul: ");
+
+                    // add TF for inserting plainText
+                    JTFHelper.setMaximumSize(new Dimension(100, 28));
+                    JTFHelper.setPreferredSize(new Dimension(100, 28));
+
+                    // add label for setting the algorithm
+                    jLabelAlg.setText("Introduceti algoritmul de criptare: ");
+
+                    // add TF for algorithm insertion
+                    jTFAlgorithm.setMaximumSize(new Dimension(100, 28));
+                    jTFAlgorithm.setPreferredSize(new Dimension(100, 28));
+
+                    //add label for symmetric key algorithm
+                    jLabelSymmetricKeyAlg.setText("Introduceti algoritmul cheii: ");
+
+                    //add TF for symmetric key algorithm
+                    JTFSymmetricKeyAlg.setMaximumSize(new Dimension(100, 28));
+                    JTFSymmetricKeyAlg.setPreferredSize(new Dimension(100, 28));
+
+                    // perform symmetric encryption..
+                    performCrypto.setText("Criptare");
+
+
+                    removeAllActionListenersFromButton(performCrypto);
+                    performCrypto.addActionListener(getPerformSymmetricListener());
+                }
+
+
+                    //decrypt symmetric text
                 else if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 2
                         &&comboEncryptionType.getSelectedIndex() == 2 && comboResourceType.getSelectedIndex() == 1) {
 
@@ -491,6 +531,8 @@ public class CryptoFrame extends JFrame {
 
                 }
 
+
+
                 else {
 
                     changeStateCryptoElements(false, false, false, false, false);
@@ -586,6 +628,55 @@ public class CryptoFrame extends JFrame {
         };
 
     }
+
+    private ActionListener getPerformAsymmetricFileEncryption () {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                if (JTFKeyLength.getText() != null && JTFKeyLength.getText() != " "
+                        && JTFKeyLength.getText().length() != 0 && jTFAlgorithm.getText() != null
+                        && jTFAlgorithm.getText() != " " && jTFAlgorithm.getText().length() != 0) {
+
+                    try {
+                        AsymmetricCrypto ac = new AsymmetricCrypto(jTFAlgorithm.getText());
+                        File input = new File("KeyPair/input_asymmetric_file_encryption.txt");
+                        File output = new File("KeyPair/encrypted_asymmetric_file.txt");
+
+                        if (!input.exists()) {
+                            JOptionPane.showConfirmDialog(cf, "Fisierul de input nu exista !", "!", JOptionPane.ERROR_MESSAGE);
+                        }
+
+                        else if (input.exists()) {
+                            if (output.exists()) {
+                                output.delete(); output.createNewFile();
+
+                                ac.encryptFile(ac.getFileInBytes(input), output);
+
+                                encrypted = String.valueOf(ac.getFileInBytes(output));
+
+                            }
+                        }
+
+
+
+                    } catch (Exception e2) {
+                        // TODO Auto-generated catch block
+                        e2.printStackTrace();
+                    }
+
+                    System.out.println("Criptarea a fost facuta cu succes !");
+                    JOptionPane.showMessageDialog(cf, encrypted, "Rezultat criptare", JOptionPane.INFORMATION_MESSAGE);
+
+                    createSendEmailButton("carolinaangelica26@gmail.com", encrypted);
+                } else {
+                    String message = "Nu ati completat unul dintre campurile necesare criptarii !";
+                    JOptionPane.showMessageDialog(cf, message, "!", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        };
+    }
+
 
     private ActionListener getPerformSymmetricListener() {
         return new ActionListener() {
@@ -692,7 +783,7 @@ public class CryptoFrame extends JFrame {
                         e1.printStackTrace();
                     }
                 } else {
-                    String message = "Nu ati completat unul dintre campurile necesare criptarii !";
+                    String message = "Nu ati completat unul dintre campurile necesare decriptarii !";
                     JOptionPane.showMessageDialog(cf, message, "!", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -778,7 +869,7 @@ public class CryptoFrame extends JFrame {
 
 
                         if (!encryptedFile.exists()) {
-                            JOptionPane.showConfirmDialog(cf, "Fisierul encriptat nu exista !", "!", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showConfirmDialog(cf, "Fisierul criptat nu exista !", "!", JOptionPane.ERROR_MESSAGE);
                         } else if (encryptedFile.exists() && decryptedFile.exists()) {
                             decryptedFile.delete();
                             try {
@@ -808,7 +899,7 @@ public class CryptoFrame extends JFrame {
 
                     createSendEmailButton("carolinaangelica26@gmail.com", decrypted);
                 } else {
-                    String message = "Nu ati completat unul dintre campurile necesare criptarii !";
+                    String message = "Nu ati completat unul dintre campurile necesare decriptarii !";
                     JOptionPane.showMessageDialog(cf, message, "!", JOptionPane.ERROR_MESSAGE);
 
                 }
@@ -836,18 +927,26 @@ public class CryptoFrame extends JFrame {
                               if (inputFile.exists() && encryptedFile.exists()) {
                                   encryptedFile.delete();
                                   encryptedFile.createNewFile();
-                                  FileWriter fw = new FileWriter(encryptedFile);
-                                  BufferedWriter bw = new BufferedWriter(fw);
 
-                                    returnValue = String.valueOf(SymmetricCrypto.encryptImage(sc.getkeyImag(JTFSymmetricKeyAlg.getText()),JFileChooser.getSelectedFile(), encryptedFile, sc.getIV()));
-                                  bw.write( returnValue);
-                                  bw.close();
+
+                                  SymmetricCrypto.encryptImage(sc.getkeyImag(JTFSymmetricKeyAlg.getText()),inputFile, encryptedFile, sc.getIV());
+                                  returnValue = String.valueOf(sc.getFileInBytes(encryptedFile));
                                   System.out.println("Success !");
                                   /*SymmetricCrypto.decryptImage(sc.getkeyImag("AES"), output1, input2, sc.getIV() );
                                   System.out.println("Decrypted !");*/
 
-                                  encrypted = sc.encryptText(returnValue, JTFSymmetricKeyAlg.getText());
-                                    File encryptedImg = new File("KeyPair/encrypted_symmetric_img.txt");
+                                  try {
+                                      encrypted = sc.encryptText(returnValue, JTFSymmetricKeyAlg.getText());
+                                  } catch (BadPaddingException e) {
+                                      e.printStackTrace();
+                                  } catch (IllegalBlockSizeException e) {
+                                      e.printStackTrace();
+                                  } catch (InvalidAlgorithmParameterException e) {
+                                      e.printStackTrace();
+                                  } catch (InvalidKeyException e) {
+                                      e.printStackTrace();
+                                  }
+                                  File encryptedImg = new File("KeyPair/encrypted_symmetric_img.txt");
 
                                     if (encryptedImg.exists()) {
                                         encryptedImg.delete();
@@ -889,40 +988,57 @@ public class CryptoFrame extends JFrame {
                         && jTFAlgorithm.getText().length() != 0 && JTFSymmetricKeyAlg.getText() != null
                         && JTFSymmetricKeyAlg.getText() != " " && JTFSymmetricKeyAlg.getText().length() != 0
                         ) {
-                    String returnValue;
+                            String returnValue = null;
                     try {
                         SymmetricCrypto sc = new SymmetricCrypto(jTFAlgorithm.getText());
 
-                        File decryptedFile = new File ("KeyPair/decrypted_symmetric_file.txt");
+                        File encryptedFile = new File("KeyPair/encrypted_symmetric_img.txt");
+                        File decryptedFile = new File ("KeyPair/decrypted_symmetric_img.txt");
                         File transformedImg = new File("KeyPair/img_out.jpg");
-                        if (decryptedFile.exists() && transformedImg.exists()) {
+
+                        if (!encryptedFile.exists()) {
+                            JOptionPane.showConfirmDialog(cf, "Fisierul criptat nu exista !", "!", JOptionPane.ERROR_MESSAGE);
+                        }
+                         else if (encryptedFile.exists()) {
                             decryptedFile.delete(); transformedImg.delete();
                             decryptedFile.createNewFile(); transformedImg.createNewFile();
                             FileWriter fw = new FileWriter(decryptedFile);
                             BufferedWriter bw = new BufferedWriter(fw);
-                            returnValue = sc.decryptText(String.valueOf(Files.readAllLines(Paths.get("KeyPair/encrypted_symmetric_img.txt"))), JTFSymmetricKeyAlg.getText());
-                           // returnValue = String.valueOf(SymmetricCrypto.encryptImage(sc.getkeyImag(JTFSymmetricKeyAlg.getText()),JFileChooser.getSelectedFile(), encryptedFile, sc.getIV()));
-                            bw.write( returnValue);
-                            bw.close();
-                            System.out.println("Success !");
-                                  /*SymmetricCrypto.decryptImage(sc.getkeyImag("AES"), output1, input2, sc.getIV() );
-                                  System.out.println("Decrypted !");*/
+                            returnValue = sc.decryptText(readFileAsString("KeyPair/encrypted_symmetric_img.txt"), JTFSymmetricKeyAlg.getText());
 
-                            decrypted = String.valueOf(SymmetricCrypto.decryptImage(sc.getkeyImag(JTFSymmetricKeyAlg.getText()), decryptedFile, transformedImg, sc.getIV() ));
+                                 System.out.println("return value is: " + returnValue);
+                                 bw.write( returnValue);
+                                 bw.close();
+                                 System.out.println("Success !");
+
                         }
+
+                        SymmetricCrypto.decryptImage(sc.getkeyImag(JTFSymmetricKeyAlg.getText()), decryptedFile, transformedImg, sc.getIV());
+
+
                     } catch (NoSuchPaddingException | NoSuchAlgorithmException e1) {
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
                     } catch (IOException e1) {
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
+                    } catch (InvalidAlgorithmParameterException e) {
+                        e.printStackTrace();
+                    } catch (IllegalBlockSizeException e) {
+                        e.printStackTrace();
+                    } catch (BadPaddingException e) {
+                        e.printStackTrace();
+                    } catch (InvalidKeyException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                     JLabel image = new JLabel(createImageIcon("KeyPair/img_out.jpg"));
                     JOptionPane.showMessageDialog (cf, image, "Rezultat decriptare", JOptionPane.INFORMATION_MESSAGE );
 
                     createSendEmailButton("carolinaangelica26@gmail.com", encrypted);
                 } else {
-                    String message = "Nu ati completat unul dintre campurile necesare criptarii !";
+                    String message = "Nu ati completat unul dintre campurile necesare decriptarii !";
                     JOptionPane.showMessageDialog(cf, message, "!", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -1048,6 +1164,13 @@ public class CryptoFrame extends JFrame {
             System.out.println("Cale fisier selectat: " + selected.getAbsolutePath() + "\n" + "Nume fisier selectat: " + selected.getName());
 
         }
+    }
+
+    public String readFileAsString(String fileName)throws Exception
+    {
+        String data = "";
+        data = new String(Files.readAllBytes(Paths.get(fileName)));
+        return data;
     }
 
     private void removeAllActionListenersFromButton(JButton button) {
