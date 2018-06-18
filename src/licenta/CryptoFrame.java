@@ -39,6 +39,7 @@ import javax.naming.directory.NoSuchAttributeException;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 
+import org.apache.commons.io.FileUtils;
 import org.bouncycastle.util.encoders.Base64;
 
 public class CryptoFrame extends JFrame {
@@ -725,20 +726,24 @@ public class CryptoFrame extends JFrame {
 
                     try {
                         AsymmetricCrypto ac = new AsymmetricCrypto(jTFAlgorithm.getText());
-                        File input = new File("KeyPair/encrypted_asymmetric_file.txt");
+                        File input = new File("KeyPair/encrypted_text_asymmmetric.txt");
                         File output = new File("KeyPair/decrypted_asymmetric_file.txt");
 
+                        
                         if (!input.exists()) {
                             JOptionPane.showConfirmDialog(cf, "Fisierul de input nu exista !", "!", JOptionPane.ERROR_MESSAGE);
-                        }
-
-                        else if (input.exists()) {
+                        } else if (input.exists()) {
                             if (output.exists()) {
                                 output.delete(); output.createNewFile();
+                                String s = FileUtils.readFileToString(input);
+                                
+                                System.out.println(RSA.decrypt(s, RSA.privateKey));
 
-                                ac.decryptFile(ac.getFileInBytes(input), output);
+                                
+                                //ac.decryptFile(ac.getFileInBytes(input), output);
+                                encrypted = RSA.decrypt(s, RSA.privateKey);
 
-                                encrypted = String.valueOf(ac.getFileInBytes(output));
+                                //encrypted = String.valueOf(ac.getFileInBytes(output));
 
                             }
                         }
