@@ -268,7 +268,7 @@ public class CryptoFrame extends JFrame {
                     }
 
                 // encrypt asymmetric file
-                if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
+              else  if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
                         && comboEncryptionType.getSelectedIndex() == 1 && comboResourceType.getSelectedIndex() == 2) {
                     changeStateCryptoElements(true, true, false, false, true);
                     clearCryptoTextFields();
@@ -305,7 +305,7 @@ public class CryptoFrame extends JFrame {
                 }
 
                 // decrypt asymmetric file
-                if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
+               else if (comboResourceType.isShowing() && e.getSource() != null && comboOperationType.getSelectedIndex() == 1
                         && comboEncryptionType.getSelectedIndex() == 2 && comboResourceType.getSelectedIndex() == 2) {
                     changeStateCryptoElements(true, true, false, false, true);
                     clearCryptoTextFields();
