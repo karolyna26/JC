@@ -595,7 +595,7 @@ public class CryptoFrame extends JFrame {
 
                     try {
                         AsymmetricCrypto ac = new AsymmetricCrypto(jTFAlgorithm.getText());
-                        encrypted = ac.encryptText(JTFHelper.getText());
+                        encrypted = java.util.Base64.getEncoder().encodeToString((RSA.encrypt(JTFHelper.getText(), RSA.publicKey)));
                         File file = new File("KeyPair/encrypted_text_asymmmetric.txt");
                         FileWriter fw = new FileWriter(file);
                         BufferedWriter bw = new BufferedWriter(fw);
